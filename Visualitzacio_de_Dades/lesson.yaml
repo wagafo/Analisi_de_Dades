@@ -1,0 +1,238 @@
+- Class: meta
+  Course: Analisi de Dades
+  Lesson: Visualitzacio de Dades
+  Author: Nick Carchedi, Walter Garcia-Fontes
+  Type: Standard
+  Organization: JHU Biostatistics
+  Version: 1.0.0
+
+- Class: text
+  Output: Ara que hem aprés les tècniques i els càlculs estadístics bàsics
+    per descriure un conjunt de dades, el pròxim pas és esbrinar com il·lustrar
+    i visualitzar de manera efectiva les dades.
+
+- Class: text
+  Output: És útil en primer lloc visualitzar les dades abans que un analista
+    de dades comença una anàlisi a fons del conjunt de dades. En aquesta
+    lliçó treballarem tècniques útils per visualitzar una variable numèrica.
+
+- Class: text
+  Output: Mitjançant l'organització de les dades en una DIAGRAMA o una
+    GRÀFICA, l'estadístic pot explorar i resumir algunes propietats bàsiques
+    del conjunt de dades. La disciplina de descriure quantitativament
+    les propietats principals d'un conjunt de dades es coneix com
+    ESTADÍSTICA DESCRIPTIVA.
+
+- Class: text
+  Output: El diagrama més senzill de les dades s'anomena DIAGRAMA DE PUNTS,
+    i s'usa per inspeccionar visualment els valors d'una variable. A un
+    diagrama de punts, sols hi ha un eix x horitzontal i els valors del
+    conjunt de dades es representen amb punts a sobre aquest eix.
+
+- Class: figure
+  Output: Aquí hi ha un diagrama de punts creat usant la variable «price»
+    del nostre conjunt de dades «cars». Com podeu haver notat, el preu
+    es reporta a l'eix x en milers, i cada punt a sobre de l'eix representa
+    el preu d'un dels 54 cotxes en el nostre conjunt de dades.
+  Figure: mod1_dotplot.R
+  FigureType: new
+
+- Class: exact_question
+  Output: Quan mirem a aquest diagrama de punts, al voltant de quin
+    preu (en milers) sembla haver-hi la densitat més alta de casos?
+  CorrectAnswer: '7-13'
+  AnswerTests: exact='7-13'
+  Hint: Mireu la part de la gràfica on els punts són més foscos i estan més
+    junts.
+
+- Class: text
+  Output: Considerant que els diagrames de punts mostren amb claredat els
+    valors numèrics d'una variable per a cada individu en el conjunt de dades,
+    són particularment útils quan s'analitzen conjunts de dades amb pocs casos.
+
+- Class: text
+  Output: Un HISTOGRAMA és semblant a un diagrama de punts, però en comptes
+    de mostrar cada valor específic, divideix els valors de les vostres
+    dades en diversos intervals o classes, proveint una representació més
+    condensada de les dades.
+
+- Class: figure
+  Output: Aquí hem creat un histograma usant les dades de milles per galó per
+    a tots els nostres cotxes. Com podeu notar, els valors de milles per galó
+    (MPG) al llarg de l'eix x estan dividits en intervals amb un rang igual
+    a 5. El segon interval, per exemple, agrupa tots els cotxers que
+    aconsegueixen 21-26 MPG a la ciutat, i així successivament. Noteu que
+    l'interval a l'esquerra d'aquest conté aquests cotxes amb 20 MPG
+    atès que aquest valor no es pot comptar a ambdós intervals. La
+    freqüència de valors a cada interval, o el nombre de cotxers en cada
+    interval, es mostra al llarg de l'eix y.
+  Figure: mod1_histogram.R
+  FigureType: new
+
+- Class: text
+  Output: Les barres més altes mostren el rang de  valors en els quals
+    es localitza la major part dels casos de les nostres dades, mentre
+    que les barres més curtes representen el rang de valor en el qual
+    es localitzen pocs casos. En altres paraules, l'histograma proveeix
+    una visualització de la DENSITAT DE LES DADES.
+
+- Class: mult_question
+  Output: Simplement mirant aquest histograma, podeu determinar quin interval
+    de MPG té la major part de les freqüències? Per exemple, les freqüències
+    més reduïdes de valors es troben als intervals 36-40, 41-45 i 46-50.
+  AnswerChoices: 16-20; 21-25; 26-30; 31-35; 36-40; 41-45; 46-50
+  CorrectAnswer: 16-20
+  AnswerTests: omnitest(correctVal='16-20')
+  Hint: Mireu als valors de l'interval que correspon a la barra més alta
+     a l'histograma.
+
+- Class: exact_question
+  Output: Quants cotxes aconsegueixen 16-20 MPG a la ciutat?
+  CorrectAnswer: '25'
+  AnswerTests: exact=25
+  Hint: Mireu al valor més lat a l'eix y que assoleix l'interval «16-20».
+
+- Class: figure
+  Output: S'ha dibuixat una línia vermella al nostre histograma il·lustrant
+    la resposta anterior.
+  Figure: mod1_histogram_add.R
+  FigureType: addition
+
+- Class: text
+  Output: Els histogrames són particularment útils quan es visualitza
+    i es descriu la forma de la distribució de les dades. Una distribució
+    de dades pot tenir una asimetria cap a l'esquerra, una asimetria cap
+    a la dreta, o pot ser simètrica. L'ASIMETRIA és una mesura de fins a
+    quin punt els casos s'estenen cap a un cantó o un altre.
+
+- Class: figure
+  Output: Una distribució que té una asimetria cap a l'esquerra és una
+     distribució en la qual la CUA esquerra del diagrama és més llarga.
+     En altres paraules, a un histograma la major part de la distribució
+     s'ubica cap a la dreta de la mitjana.
+  Figure: mod1_leftskew.R
+  FigureType: new
+
+- Class: text
+  Output: Quan una distribució és asimètrica cap a l'esquerra, el valor
+    de la MITJANA és més petit que el de la MEDIANA, i per tant la MITJANA
+    es localitza més cap a l'esquerra de la distribució. En aquest diagrama,
+    la línia verda representa la mediana i la blava la mitjana.
+
+- Class: figure
+  Output: Per una altra part, una distribució que té una asimetria cap
+    a la dreta és una distribució en la qual al cua dreta és més llarga,
+    de manera que la major part de les dades cauen a l'esquerra de la mitjana,
+    quan es visualitza l'histograma.
+  Figure: mod1_rightskew.R
+  FigureType: new
+
+- Class: text
+  Output: Quan una distribució és asimètrica cap a la dreta, el valor de
+    la MITJANA és més gran que el de la MEDIANA, i aleshores la MITJANA
+    es localitza més cap a la dreta d'aquesta distribució. En aquest diagrama,
+    la línia verda representa la mediana i la blava representa la mitjana.
+
+- Class: figure
+  Output: Un diagrama que no té asimetries és una
+     distribució en la qual les cues als dos costats de la mitjana es
+     balancegen, i li diem simètric. Quan una distribució és simètrica,
+     la MITJANA i la MEDIANA són aproximadament iguals.
+  Figure: mod1_symmetric.R
+  FigureType: new
+
+- Class: text
+  Output: En aquest diagrama, la línia verda representa la mediana i la
+    blava representa la mitjana. La línia verda és l'única que és visible,
+    atès que la mitjana i la mediana tenen valors propers.
+
+- Class: figure
+  Output: A continuació, anem a tornar a visualitzar l'histograma que vam
+    fer anteriorment, que representa la distribució dels valors per al MPG
+    per a cadascú dels 54 cotxes del nostre conjunt de dades «cars».
+  Figure: mod1_histogram.R
+  FigureType: new
+
+- Class: mult_question
+  Output: Com classificaríeu la forma de la distribució representada per
+    aquest histograma?
+  AnswerChoices: Simètric; Asimètric cap a la dreta; Asimètric cap a l'equerra
+  CorrectAnswer: Asimètric cap a la dreta
+  AnswerTests: omnitest(correctVal='Asimètric cap a la dreta')
+  Hint: Mireu per mirar cap a quina cua s'estén la distribució. Les dades
+    seran asimètriques cap a aquesta direcció. O, mireu si les cues
+    s'estenen de manera proporcional.
+
+- Class: mult_question
+  Output: En referència a l'histograma de dalt, i tenint en compte que forma
+    real de la distribució, esperaríeu que la MEDIANA seria més gran, més
+    petita o igual a la MITJANA?
+  AnswerChoices: Més gran; Més petita; Igual
+  CorrectAnswer: Més petita
+  AnswerTests: omnitest(correctVal='Més petita')
+  Hint: Torneu a llegir a dalt per esbrinar quin és el valor de la mediana
+    en comparació a la mitjana quan la distribució és asimètrica cap a la
+    dreta.
+
+- Class: text
+  Output: Un tipus especial d'histograma es coneix com DIAGRAMA DE
+    TRONCS I FULLES. Aquest diagrama organitza numèricament les dades de
+    manera semblant a l'histograma. La columna de l'esquerra del diagrama
+    conté els TRONCS, o el valor numèrica de les desenes per a cada valors
+    (és possible que  s'hagin arrodonit els valors), organitzats
+    verticalment en ordre creixent. Les FULLES es localitzen a la columna
+    de la dreta del diagrama i són els valors unitaris (amb les dades
+    possiblement arrodonides) per a cada cas amb el mateix tronc, organitzats
+    horitzontalment en ordre creixent.
+
+- Class: text
+  Output: A un diagrama de troncs i fulles, el nombre de les fulles és igual
+    al nombre de casos del conjunt de dades. La manera més senzilla
+    d'entendre aquest diagrama és veure un.
+
+- Class: video
+  Output: Us agradaria veure un vídeo breu de YouTube sobre el diagrama
+    de tronc i fulles?
+  VideoLink: https://youtu.be/bof3pf9qxso
+
+- Class: figure
+  Output: Hem creat un diagrama de troncs i fulles a dalt usant els
+    mateixos valors de la variable «mpg_city» com heu usat a l'histograma.
+    Com podeu veure, el diagrama de troncs i fulles és un tipus útil
+    d'histograma si voleu veure les freqüències de valors específics
+    de les dades. Sovint, hi haurà únicament un interval per cada desena
+    de valors (possiblement arrodonit), però en aquest cas, l'R ens dóna
+    els mateixos intervals que havíem vist a l'histograma.
+  Figure: mod1_stem.R
+  FigureType: new
+
+- Class: exact_question
+  Output: Com mostra aquest diagrama de tronc i fulles, quants cops observem
+    el valor «22» en aquest conjunt particular de dades?
+  CorrectAnswer: '4'
+  AnswerTests: exact=4
+  Hint: Compteu les fulles en el tronc apropiat.
+
+- Class: figure
+  Output: El diagrama final que es pot usar per variables discretes o
+    contínues és el DIAGRAMA DE CAIXA, també anomenat DIAGRAMA DE CAIXA I
+    BIGOTIS. Com heu après prèviament, aquest diagrama s'usa per resumir
+    les estadístiques descriptives principals d'un conjunt de dades
+    particular i ens ajujda a il·lustrar el concepte de variabilitat.
+    He creat un diagrama de caixa perquè recordeu com es veu.
+  Figure: mod1_boxplot.R
+  FigureType: new
+
+- Class: cmd_question
+  Output: S'usa un diagrama de caixa per representar el MÍNIM, PRIMER
+    QUARTIL (Q1), MEDIANA, TERCER QUARTIL (Q3) i MÀXIM d'un conjunt de
+    dades. L'ordre de l'R «summary(cars$price)» us dóna els valors
+    d'aquestes tres estadístiques descriptives. Proveu això ara.
+  CorrectAnswer: summary(cars$price)
+  AnswerTests: swirl1cmd=summary(cars$price)
+  Hint: Escriviu «summary(cars$price)» i premeu Intro.
+
+- Class: text
+  Output: De moment hem vist diagrames gràfics per una variable numèrica.
+    En altres parts del curs veurem diagrames gràfics per variables
+    categòriques.
